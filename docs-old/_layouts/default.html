@@ -1,0 +1,52 @@
+<!-- _layouts/default.html -->
+
+---
+layout: default
+title: {{ page.title }}
+permalink: {{ page.permalink }}
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <title>{{ page.title }}</title>
+</head>
+<body>
+
+<header>
+  <h1><a href="/">Barely Compiles</a></h1>
+  <nav>
+    <!-- Add your menu items here -->
+  </nav>
+</header>
+
+<main>
+  {{ content }}
+
+  {% if page.paginate %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" rel="prev">Previous Page</a>
+      {% endif %}
+  
+      <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" rel="next">Next Page</a>
+      {% endif %}
+    </div>
+  {% endif %}
+</main>
+
+<footer>
+  &copy; {{ site.time | date: "%Y" }} - Barely Compiles. All rights reserved.
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+</body>
+</html>

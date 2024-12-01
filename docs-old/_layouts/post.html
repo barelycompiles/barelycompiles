@@ -1,0 +1,22 @@
+<!-- _layouts/post.html -->
+
+{% assign post = page %}
+{% include layout__header.html %}
+
+<article class="post">
+  <h2>{{ post.title }}</h2>
+
+  <p class="meta">Written by {{ site.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
+
+  {% if post.tags.size > 0 %}
+    <div class="tags">
+      | {{ post.tags.join(", ") }}
+    </div>
+  {% endif %}
+
+  {{ post.content }}
+
+  <a href="{{ post.url }}" class="read-more">Read More</a>
+</article>
+
+{% include layout__footer.html %}

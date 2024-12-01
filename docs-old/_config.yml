@@ -1,0 +1,52 @@
+# _config.yml
+
+title: Barely Compiles
+description: A software and coding blog where things barely compile. Explore the world of programming challenges, tips, and tricks.
+baseurl: "" # the root of your project (put only if you have customized front matter)
+
+plugins:
+  - jekyll-remote-theme
+
+themes:
+  - just-the-docs
+
+# Just-The-Docs settings
+just-the-docs:
+  theme: "cyborg"
+  base_url: "/docs"
+  navigation:
+    include: ["introduction", "getting-started"]
+    exclude: ["advanced"]
+
+# Your site data
+author: Barely Compiles
+bio: A passionate software developer who loves to explore the challenges and intricacies of programming.
+  #email: your.email@example.com
+  #twitter: your_twitter_handle
+github: barelycompiles
+  #linkedin: your_linkedin_url
+
+permalink: pretty
+paginate: 5 # Amount of posts per page
+timezone: UTC
+
+plugins:
+  - jekyll-paginate
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "post"
+
+categories: ["tips", "tricks", "challenges", "programming", "coding"]
+tags: []
+
+# Markdownify headings
+markdownify: ["_data/series.yml", "_data/tags.yml"]
+
+sass:
+  style: compressed
+
+exclude: ["node_modules", "vendor", ".git", ".gitignore", "README.md", "LICENSE.txt", "Gemfile.lock"]
