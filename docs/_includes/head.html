@@ -2,7 +2,28 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://securepubads.g.doubleclick.net; style-src 'self' https://pagead2.googlesyndication.com; img-src 'self' https://www.gstatic.com;">
+  <meta http-equiv="Content-Security-Policy-Report-Only" content="
+	default-src * 'unsafe-inline' 'unsafe-eval' data: blob: filesystem: about: ws: wss: 'unsafe-dynamic';
+	script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+	connect-src * data: blob: 'unsafe-inline';
+	img-src * data: blob: 'unsafe-inline';
+	frame-src * data: blob:;
+	style-src * data: blob: 'unsafe-inline';
+	font-src * data: blob: 'unsafe-inline';
+  ">
+
+  <!--
+  <meta http-equiv="Content-Security-Policy" content="
+	  default-src 'self';
+	  script-src-elem '*' 'unsafe-eval' 'unsafe-inline' https://pagead2.googlesyndication.com https://ep2.adtrafficquality.google;
+	  script-src '*' 'unsafe-eval' 'unsafe-inline' https://pagead2.googlesyndication.com https://ep2.adtrafficquality.google;
+	  frame-src 'self' 'unsafe-inline' https://googleads.g.doubleclick.net https://ep2.adtrafficquality.google https://www.google.com;
+	  connect-src 'self' 'unsafe-inline' https://ep1.adtrafficquality.google;
+	  style-src 'self' 'unsafe-inline';
+	  style-src-attr 'self' 'unsafe-inline';
+	  img-src 'self' 'unsafe-inline' https://ep1.adtrafficquality.google;
+  ">
+  -->
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}
